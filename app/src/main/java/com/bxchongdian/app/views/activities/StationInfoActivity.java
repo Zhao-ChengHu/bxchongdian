@@ -327,10 +327,13 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.tv_one:
-                    /*currentMode = MODE_AUTO;
-                    tvMode.setText(strMode[0]);
-                    rlWay.setVisibility(View.GONE);*/
-                    Toast.makeText(StationInfoActivity.this,"暂不支持此充电模式",Toast.LENGTH_SHORT).show();
+                    if (mStationInfoBean.cpType.equals("dc")) {
+                        currentMode = MODE_AUTO;
+                        tvMode.setText(strMode[0]);
+                        rlWay.setVisibility(View.GONE);
+                    } else {
+                        Toast.makeText(StationInfoActivity.this,"暂不支持此充电模式",Toast.LENGTH_SHORT).show();
+                    }
                     break;
                 case R.id.tv_two:
                     currentMode = MODE_MONEY;
@@ -341,22 +344,30 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
                     etNum.setHint("输入金额,至少为10元");
                     break;
                 case R.id.tv_three:
-                   /* currentMode = MODE_TIME;
-                    tvMode.setText(strMode[2]);
-                    rlWay.setVisibility(View.VISIBLE);
-                    etNum.setText("");
-                    tvType.setText("充电时间(分钟)");
-                    etNum.setHint("输入时间，至少为10分钟");*/
-                    Toast.makeText(StationInfoActivity.this,"暂不支持此充电模式",Toast.LENGTH_SHORT).show();
+                    if (mStationInfoBean.cpType.equals("dc")) {
 
+                        currentMode = MODE_TIME;
+                        tvMode.setText(strMode[2]);
+                        rlWay.setVisibility(View.VISIBLE);
+                        etNum.setText("");
+                        tvType.setText("充电时间(分钟)");
+                        etNum.setHint("输入时间，至少为10分钟");
+                    } else {
+                        Toast.makeText(StationInfoActivity.this,"暂不支持此充电模式",Toast.LENGTH_SHORT).show();
+                    }
                     break;
                 case R.id.tv_four:
-                  /*currentMode = MODE_POWER;
-                  tvMode.setText(strMode[3]);
-                  rlWay.setVisibility(View.VISIBLE);
-                  tvType.setText("充电电量(KWh)");
-                  etNum.setHint("输入电量,至少为10度");*/
-                    Toast.makeText(StationInfoActivity.this,"暂不支持此充电模式",Toast.LENGTH_SHORT).show();
+                    if (mStationInfoBean.cpType.equals("dc")) {
+
+                        currentMode = MODE_POWER;
+                        tvMode.setText(strMode[3]);
+                        rlWay.setVisibility(View.VISIBLE);
+                        tvType.setText("充电电量(KWh)");
+                        etNum.setHint("输入电量,至少为10度");
+                    } else {
+
+                        Toast.makeText(StationInfoActivity.this,"暂不支持此充电模式",Toast.LENGTH_SHORT).show();
+                    }
                   break;
                 case R.id.tv_cancel:
                     break;

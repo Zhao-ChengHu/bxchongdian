@@ -90,14 +90,19 @@ public class ScanActivity extends LvBaseAppCompatActivity implements StationInfo
     public void onAnalyzeSuccess(Bitmap mBitmap, String result) {
       // 处理充电桩二维码返回的结果
       //二维码格式：x,x,x,x,x  代表平台商，运营商，子站，充电桩，充电枪id
-      try {
-        String[] str = result.split(",");
-        gunId = str[4];
-        presenter.queryStation(result);
-      }catch (Exception e){
-        showToast("二维码出错了");
-        scanAgain();
+      if (result.contains(",")) {
+        try {
+          String[] str = result.split(",");
+          gunId = str[4];
+//          presenter.queryStation(result);
+        } catch (Exception e) {
+          showToast("二维码出错了");
+          scanAgain();
+        }
+      } else {
+        gunId="0";
       }
+      presenter.queryStation(result);
     }
 
     /**
