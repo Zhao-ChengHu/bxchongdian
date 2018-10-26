@@ -25,7 +25,7 @@ android {
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
-        versionName "1.2.1"
+        versionName "1.2.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         // annotationProcessor 传参 for arouter
         javaCompileOptions {
@@ -113,6 +113,7 @@ dependencies {
     annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:2.4.0"
     compile files('libs/pgyer_sdk_2.7.0.jar')
     compile files('libs/alipaySdk-20180601.jar')
+//    compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 }
 
 // ====== for package
