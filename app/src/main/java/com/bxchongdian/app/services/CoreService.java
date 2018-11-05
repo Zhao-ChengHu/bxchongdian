@@ -144,7 +144,7 @@ public class CoreService extends Service {
             (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
         Uri uri = Uri.parse(url);
         DownloadManager.Request request = new DownloadManager.Request(uri);
-        request.setDestinationInExternalPublicDir("download", "jiedian.apk");
+        request.setDestinationInExternalPublicDir("download", "bxcp.apk");
         request.setDescription("百祥充电应用下载中");
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setVisibleInDownloadsUi(true);

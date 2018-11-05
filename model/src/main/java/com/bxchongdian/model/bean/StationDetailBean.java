@@ -69,9 +69,9 @@ public class StationDetailBean {
       if("AC".equals(cpType.toUpperCase())) {
         return "7KW";
       }else if ("02302A155HS00001".equals(cpId)){
-        return "45KW";
-      }else {
         return "30KW";
+      }else {
+        return "60KW";//0001002300000011 百祥直流60kw桩
       }
     }
 
