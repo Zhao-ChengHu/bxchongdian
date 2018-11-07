@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/lv_white"
@@ -106,7 +107,8 @@
                 android:padding="2dp"
                 android:scrollHorizontally="false"
                 android:textColor="@color/secondary_text_black"
-                android:textSize="@dimen/ts_lel_three"/>
+                android:textSize="@dimen/ts_lel_three"
+                tools:ignore="EllipsizeMaxLines" />
             <TextView
                 android:id="@+id/col_item_time"
                 android:layout_width="match_parent"
@@ -130,6 +132,179 @@
             android:textSize="@dimen/ts_lel_two"/>
     </LinearLayout>
 
+    <!--<View-->
+        <!--style="@style/Mime_Horizontal_line"-->
+        <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+        <!--android:layout_marginRight="@dimen/activity_horizontal_margin"/>-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingBottom="5dp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_marginRight="2dp"-->
+        <!--android:orientation="vertical">-->
+        <!--<LinearLayout-->
+            <!--android:id="@+id/ll_free"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_weight="5">-->
+            <!--<ImageView-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginLeft="8dp"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_rmb"/>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="4dp"-->
+                <!--android:orientation="vertical">-->
+                <!--<LinearLayout-->
+                    <!--android:layout_marginTop="1dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text=""-->
+                        <!--android:textSize="12sp"/>-->
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_electric_fee"-->
+                        <!--android:layout_marginTop="1dp"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:ellipsize="marquee"-->
+                        <!--android:focusable="true"-->
+                        <!--android:focusableInTouchMode="true"-->
+                        <!--android:singleLine="true"/>-->
+                <!--</LinearLayout>-->
+                <!--<LinearLayout-->
+                    <!--android:layout_marginTop="1dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text=""-->
+                        <!--android:textSize="12sp"/>-->
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_service_fee"-->
+                        <!--android:layout_marginTop="1dp"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:ellipsize="marquee"-->
+                        <!--android:focusable="true"-->
+                        <!--android:focusableInTouchMode="true"-->
+                        <!--android:singleLine="true"/>-->
+                    <!--<ImageView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:paddingLeft="10dp"-->
+                        <!--android:paddingRight="20dp"-->
+                        <!--android:src="@drawable/ic_right" />-->
+                <!--</LinearLayout>-->
+                <!--<LinearLayout-->
+                    <!--android:layout_marginTop="1dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text=""-->
+                        <!--android:textSize="12sp"/>-->
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_park_fee"-->
+                        <!--android:layout_marginTop="1dp"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:ellipsize="marquee"-->
+                        <!--android:focusable="true"-->
+                        <!--android:focusableInTouchMode="true"-->
+                        <!--android:singleLine="true"/>-->
+                <!--</LinearLayout>-->
+            <!--</LinearLayout>-->
+
+            <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_marginLeft="4dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/tv_service"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:lineSpacingExtra="2dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:text="充电费：0.80元/度\n服务费：0.80元/度\n停车费：5元/小时"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textColor="@color/secondary_text_black"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textSize="12sp"/>&ndash;&gt;-->
+        <!--</LinearLayout>-->
+        <!--<View-->
+            <!--style="@style/Mime_Horizontal_line"-->
+            <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+            <!--android:layout_marginRight="@dimen/activity_horizontal_margin"/>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_weight="4">-->
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="8dp"-->
+                <!--android:src="@drawable/ic_pay"-->
+                <!--android:layout_gravity="center"/>-->
+            <!--<LinearLayout-->
+                <!--android:paddingLeft="4dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical">-->
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_pay_type"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="12sp"/>-->
+                <!--<LinearLayout-->
+                    <!--android:layout_marginTop="1dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="运营商："-->
+                        <!--android:textSize="12sp"/>-->
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_companyName"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:ellipsize="marquee"-->
+                        <!--android:focusableInTouchMode="true"-->
+                        <!--android:marqueeRepeatLimit="marquee_forever"-->
+                        <!--android:singleLine="true"/>-->
+                <!--</LinearLayout>-->
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_serviceCall"-->
+                    <!--android:layout_marginTop="1dp"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="12sp"/>-->
+            <!--</LinearLayout>-->
+
+            <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/tv_pay_type"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:paddingLeft="8dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:lineSpacingExtra="2dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:text="支付方式：充电卡、本APP\n运营商：双杰\n服务电话：95588"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textColor="@color/secondary_text_black"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textSize="12sp"/>&ndash;&gt;-->
+        <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
     <View
         style="@style/Mime_Horizontal_line"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -140,7 +315,7 @@
         android:paddingBottom="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="2dp"
-        android:orientation="vertical">
+        android:orientation="horizontal">
         <LinearLayout
             android:id="@+id/ll_free"
             android:layout_width="match_parent"
@@ -158,91 +333,36 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
                 android:orientation="vertical">
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tv_electric_fee"
                     android:layout_marginTop="1dp"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:textSize="12sp"/>
-                    <TextView
-                        android:id="@+id/tv_electric_fee"
-                        android:layout_marginTop="1dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:ellipsize="marquee"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true"
-                        android:singleLine="true"/>
-                </LinearLayout>
-                <LinearLayout
+                    android:textSize="12dp"/>
+                <TextView
+                    android:id="@+id/tv_service_fee"
                     android:layout_marginTop="1dp"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:textSize="12sp"/>
-                    <TextView
-                        android:id="@+id/tv_service_fee"
-                        android:layout_marginTop="1dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:ellipsize="marquee"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true"
-                        android:singleLine="true"/>
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="20dp"
-                        android:src="@drawable/ic_right" />
-                </LinearLayout>
-                <LinearLayout
+                    android:textSize="12dp"/>
+                <TextView
+                    android:id="@+id/tv_park_fee"
                     android:layout_marginTop="1dp"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:textSize="12sp"/>
-                    <TextView
-                        android:id="@+id/tv_park_fee"
-                        android:layout_marginTop="1dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:ellipsize="marquee"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true"
-                        android:singleLine="true"/>
-                </LinearLayout>
+                    android:textSize="12dp"/>
             </LinearLayout>
 
             <!--<TextView-->
-                <!--android:layout_marginLeft="4dp"-->
-                <!--android:id="@+id/tv_service"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:lineSpacingExtra="2dp"-->
-                <!--android:text="充电费：0.80元/度\n服务费：0.80元/度\n停车费：5元/小时"-->
-                <!--android:textColor="@color/secondary_text_black"-->
-                <!--android:textSize="12sp"/>-->
+            <!--android:layout_marginLeft="4dp"-->
+            <!--android:id="@+id/tv_service"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:lineSpacingExtra="2dp"-->
+            <!--android:text="充电费：0.80元/度\n服务费：0.80元/度\n停车费：5元/小时"-->
+            <!--android:textColor="@color/secondary_text_black"-->
+            <!--android:textSize="12sp"/>-->
         </LinearLayout>
-        <View
-            style="@style/Mime_Horizontal_line"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -251,7 +371,6 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
                 android:src="@drawable/ic_pay"
                 android:layout_gravity="center"/>
             <LinearLayout
@@ -263,7 +382,7 @@
                     android:id="@+id/tv_pay_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"/>
+                    android:textSize="12dp"/>
                 <LinearLayout
                     android:layout_marginTop="1dp"
                     android:layout_width="match_parent"
@@ -273,12 +392,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="运营商："
-                        android:textSize="12sp"/>
+                        android:textSize="12dp"/>
                     <TextView
                         android:id="@+id/tv_companyName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
+                        android:textSize="12dp"
                         android:ellipsize="marquee"
                         android:focusableInTouchMode="true"
                         android:marqueeRepeatLimit="marquee_forever"
@@ -289,18 +408,66 @@
                     android:layout_marginTop="1dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"/>
+                    android:textSize="12dp"/>
             </LinearLayout>
 
             <!--<TextView-->
-                <!--android:id="@+id/tv_pay_type"-->
-                <!--android:paddingLeft="8dp"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:lineSpacingExtra="2dp"-->
-                <!--android:text="支付方式：充电卡、本APP\n运营商：双杰\n服务电话：95588"-->
-                <!--android:textColor="@color/secondary_text_black"-->
-                <!--android:textSize="12sp"/>-->
+            <!--android:id="@+id/tv_pay_type"-->
+            <!--android:paddingLeft="8dp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:lineSpacingExtra="2dp"-->
+            <!--android:text="支付方式：充电卡、本APP\n运营商：双杰\n服务电话：95588"-->
+            <!--android:textColor="@color/secondary_text_black"-->
+            <!--android:textSize="12sp"/>-->
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        style="@style/Mime_Horizontal_line"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tv_charging_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="充电费详情"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:textColor="@color/secondary_text_black"
+                android:textSize="15sp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="50dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_fee_server"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:text="服务费详情"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="60dp"
+                android:textColor="@color/secondary_text_black"
+                android:textSize="15sp"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

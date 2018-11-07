@@ -20,6 +20,7 @@ import com.bxchongdian.app.LvAppUtils;
 import com.bxchongdian.app.R;
 import com.bxchongdian.app.event.ShowNavListEvent;
 import com.bxchongdian.app.utils.FeeUtils;
+import com.bxchongdian.app.views.activities.ChargingfeeActivity;
 import com.bxchongdian.app.views.activities.FeeActivity;
 import com.bxchongdian.app.views.activities.LoginActivity;
 import com.bxchongdian.app.views.activities.PileListActivity;
@@ -365,7 +366,19 @@ public class OrderListFragment extends LvBaseFragment {
 			});
 
 			//跳转电价界面
-			holder.llFree.setOnClickListener(new View.OnClickListener() {
+//			holder.llFree.setOnClickListener(new View.OnClickListener() {
+//				@Override
+//				public void onClick(View v) {
+//					FeeActivity.navigation(substationBean.areaId, substationBean.areaName);
+//				}
+//			});
+			holder.tvChargingfee.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					ChargingfeeActivity.navigation(substationBean.areaId, substationBean.areaName);
+				}
+			});
+			holder.tvFeeserver.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
 					FeeActivity.navigation(substationBean.areaId, substationBean.areaName);
@@ -436,7 +449,10 @@ public class OrderListFragment extends LvBaseFragment {
 			TextView tvAc;
 			@BindView(R.id.tv_dc)
 			TextView tvDc;
-
+			@BindView(R.id.tv_charging_fee)
+			TextView tvChargingfee;
+			@BindView(R.id.tv_fee_server)
+			TextView tvFeeserver;
 			ViewHolder(View itemView) {
 				super(itemView);
 				ButterKnife.bind(this, itemView);

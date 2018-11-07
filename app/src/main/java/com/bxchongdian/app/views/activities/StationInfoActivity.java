@@ -198,7 +198,14 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
     }
 
     //查询电价
-    @OnClick(R.id.ll_free)
+    @OnClick(R.id.tv_charging_fee)
+    public void clickFeeCharging() {
+        if (mStationInfoBean != null) {
+            ChargingfeeActivity.navigation(mStationInfoBean.areaId, mStationInfoBean.areaName);
+        }
+
+    }
+    @OnClick(R.id.tv_fee_server)
     public void clickFee() {
         if (mStationInfoBean != null) {
             FeeActivity.navigation(mStationInfoBean.areaId, mStationInfoBean.areaName);

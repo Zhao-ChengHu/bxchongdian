@@ -2,10 +2,15 @@ package com.bxchongdian.app.views.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
+import com.bxchongdian.app.views.activities.ChargingfeeActivity;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -67,7 +72,7 @@ public class MainFragment extends LvBaseMainFragment implements MainContract.Vie
     private MainPresenter  mainPresenter;
     private FeePresenter   feePresenter;
     private SubstationBean substationBean;
-
+//    private PopupWindow       popWindow;
     public static MainFragment newInstance() {
         Bundle args = new Bundle();
         MainFragment fragment = new MainFragment();
@@ -96,6 +101,7 @@ public class MainFragment extends LvBaseMainFragment implements MainContract.Vie
 
     @Override
     protected void initView(@Nullable Bundle savedInstanceState) {
+//        initPopWindow();
         if (savedInstanceState == null) {
             mFragments[FIRST] = OrderFragment.newInstance();
             mFragments[SECOND] = ChargingFragment.newInstance();
@@ -115,6 +121,51 @@ public class MainFragment extends LvBaseMainFragment implements MainContract.Vie
         }
         initBottomNavigation();
     }
+    /**
+     * 初始化底部弹窗
+     */
+//    private void initPopWindow() {
+//        View popView = LayoutInflater.from(this.getActivity()).inflate(R.layout.view_pop_fee, null);
+//        TextView tvOrder = (TextView) popView.findViewById(R.id.tv_one);
+//        tvOrder.setText("查看充电费");
+//        TextView tvScan = (TextView) popView.findViewById(R.id.tv_two);
+//        tvScan.setText("查看服务费");
+//        TextView tvCancel = (TextView) popView.findViewById(R.id.tv_cancel);
+//        tvCancel.setOnClickListener(popListener);
+//        tvOrder.setOnClickListener(popListener);
+//        tvScan.setOnClickListener(popListener);
+//        popWindow = new PopupWindow(popView, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+//        popWindow.setFocusable(true);
+//        popWindow.setTouchable(true);
+//        popWindow.setOutsideTouchable(false);
+//        popWindow.setAnimationStyle(R.style.AnimBottom);
+//        popWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+//            @Override
+//            public void onDismiss() {
+////                setBackgroundAlpha(1);
+//            }
+//        });
+//    }
+
+    /**
+     * 弹窗点击监听
+     */
+//    View.OnClickListener popListener = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            switch (v.getId()) {
+//                case R.id.tv_one:     //跳转查看充电费
+//                    ChargingfeeActivity.navigation(substationBean.areaId, substationBean.areaName);
+//                    break;
+//                case R.id.tv_two://跳转查看查看服务费
+//                    FeeActivity.navigation(substationBean.areaId, substationBean.areaName);
+//                    break;
+//                case R.id.tv_cancel:
+//                    break;
+//            }
+//            popWindow.dismiss();
+//        }
+//    };
 
     /**
      * 初始化底部导航
@@ -269,11 +320,24 @@ public class MainFragment extends LvBaseMainFragment implements MainContract.Vie
     /**
      * OrderView中的费用点击事件
      */
-    @OnClick(R.id.tv_service)
-    public void feeDetail() {
+    @OnClick(R.id.view_divider_4)
+    public void chargingFee() {
+        //跳转到FeeActivity
+        ChargingfeeActivity.navigation(substationBean.areaId, substationBean.areaName);
+    }
+
+    @OnClick(R.id.view_divider_5)
+    public void serviceFee() {
         //跳转到FeeActivity
         FeeActivity.navigation(substationBean.areaId, substationBean.areaName);
     }
+
+//    @OnClick(R.id.tv_service)
+//    public void selectMode() {tv_service
+//        if (!popWindow.isShowing()) {
+//            popWindow.showAtLocation(popWindow.getContentView(), Gravity.BOTTOM, 0, 0);
+//        }
+//    }
 
     /**
      * --------------------

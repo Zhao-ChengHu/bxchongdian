@@ -66,7 +66,7 @@ public class FeeActivity extends LvBaseAppCompatActivity implements FeeContract.
     @Override
     protected void initView(Bundle savedInstanceState) {
         super.initView(savedInstanceState);
-        initToolbarNav("电价详情");
+        initToolbarNav("服务费详情");
         presenter.queryFees(getIntent().getStringExtra("stationId"));
         tvName.setText(getIntent().getStringExtra("stationName"));
     }
@@ -107,7 +107,7 @@ public class FeeActivity extends LvBaseAppCompatActivity implements FeeContract.
     public void getFees(List<FeeBean> list) {
         if ( list != null && list.size() > 0){
             for (FeeBean bean: list){
-                if (bean.templateType.equals("e")){
+                if (bean.templateType.equals("s")){
                     refreshUI(bean);
                     break;
                 }
