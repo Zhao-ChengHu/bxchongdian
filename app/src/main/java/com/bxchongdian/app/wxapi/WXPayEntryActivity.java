@@ -268,9 +268,16 @@ public class WXPayEntryActivity extends LvBaseAppCompatActivity implements IWXAP
     private Handler mHandler = new Handler() {
         @SuppressWarnings("unused")
         public void handleMessage(Message msg) {
+            showLoadingDialog("正在检查支付结果");
+            //两秒延迟为了等待支付宝给后台发送消息
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             switch (msg.what) {
                 case SDK_PAY_FLAG: {
-                    showLoadingDialog("正在检查支付结果");
+//                    showLoadingDialog("正在检查支付结果");
                     @SuppressWarnings("unchecked")
                     PayResult payResult = new PayResult((Map<String, String>) msg.obj);
                     /**
