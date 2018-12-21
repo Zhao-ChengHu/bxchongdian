@@ -405,7 +405,7 @@ public class ChargingFragment extends LvBaseFragment implements QueryOrderContra
 										public void onNext(Long aLong) {
 											super.onNext(aLong);
 											stopStatus();
-											if (aLong == 10) {
+											if (aLong == 100) {
 												closeSubscription();
 												showNormal();
 												showToast("APP无法停止充电，请手动停止充电");
