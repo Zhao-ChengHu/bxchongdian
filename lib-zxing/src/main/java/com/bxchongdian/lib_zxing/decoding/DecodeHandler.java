@@ -79,7 +79,7 @@ final class DecodeHandler extends Handler {
         width = height;
         height = tmp;
 
-        PlanarYUVLuminanceSource source = CameraManager.get().buildLuminanceSource(rotatedData, width, height);
+        final PlanarYUVLuminanceSource source = CameraManager.get().buildLuminanceSource(rotatedData, width, height);
         BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
         try {
             rawResult = multiFormatReader.decodeWithState(bitmap);
@@ -88,7 +88,68 @@ final class DecodeHandler extends Handler {
         } finally {
             multiFormatReader.reset();
         }
-
+//        if (rawResult != null) {
+//            // Don't log the barcode contents for security.
+//            long end = System.currentTimeMillis();
+//            Log.d(TAG, "Found barcode in " + (end - start) + " ms");
+//            if (fragment.getHandler() != null) {
+//                float point1X = rawResult.getResultPoints()[0].getX();
+//                float point1Y = rawResult.getResultPoints()[0].getY();
+//                float point2X = rawResult.getResultPoints()[1].getX();
+//                float point2Y = rawResult.getResultPoints()[1].getY();
+//                int len = (int) Math.sqrt(Math.abs(point1X - point2X) * Math.abs(point1X - point2X) + Math.abs(point1Y - point2Y) * Math.abs(point1Y - point2Y));
+//                if (frameRect != null) {
+//                    int frameWidth = frameRect.right - frameRect.left;
+//                    Camera camera = activity.getCameraManager().getCameraNotStatic();
+//                    Camera.Parameters parameters = camera.getParameters();
+//                    final int maxZoom = parameters.getMaxZoom();
+//                    int zoom = parameters.getZoom();
+//                    if (parameters.isZoomSupported()) {
+//                        if (len <= frameWidth / 4) {
+//                            if (zoom == 0) {
+//                                zoom = maxZoom / 3;
+//                            } else {
+//                                zoom = zoom + 10;
+//                            }
+//                            if (zoom > maxZoom) {
+//                                zoom = maxZoom;
+//                            }
+//                            parameters.setZoom(zoom);
+//                            camera.setParameters(parameters);
+//                            final Result finalRawResult = rawResult;
+//                            postDelayed(new Runnable() {
+//                                @Override
+//                                public void run() {
+//                                    Message message = Message.obtain(fragment.getHandler(), R.id.decode_succeeded, finalRawResult);
+//                                    Bundle bundle = new Bundle();
+//                                    bundle.putParcelable(DecodeThread.BARCODE_BITMAP, source.renderCroppedGreyscaleBitmap());
+//                                    message.setData(bundle);
+//                                    message.sendToTarget();
+//                                }
+//                            }, 1000);
+//
+//                        } else {
+//                            Message message = Message.obtain(fragment.getHandler(), R.id.decode_succeeded, rawResult);
+//                            Bundle bundle = new Bundle();
+//                            bundle.putParcelable(DecodeThread.BARCODE_BITMAP, source.renderCroppedGreyscaleBitmap());
+//                            message.setData(bundle);
+//                            message.sendToTarget();
+//                        }
+//                    }
+//                } else {
+//                    Message message = Message.obtain(fragment.getHandler(), R.id.decode_succeeded, rawResult);
+//                    Bundle bundle = new Bundle();
+//                    bundle.putParcelable(DecodeThread.BARCODE_BITMAP, source.renderCroppedGreyscaleBitmap());
+//                    message.setData(bundle);
+//                    message.sendToTarget();
+//                }
+//            }
+//        } else {
+//            if (fragment.getHandler() != null) {
+//                Message message = Message.obtain(fragment.getHandler(), R.id.decode_failed);
+//                message.sendToTarget();
+//            }
+//        }
         if (rawResult != null) {
             long end = System.currentTimeMillis();
             Log.d(TAG, "Found barcode (" + (end - start) + " ms):\n" + rawResult.toString());
