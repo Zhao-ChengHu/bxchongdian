@@ -35,7 +35,7 @@ public class ScanActivity extends LvBaseAppCompatActivity implements StationInfo
   private StationInfoPresenter presenter;
   private String gunId;
   private CaptureFragment captureFragment;
-
+  private int newGunId;
   public static void navigation() {
     ARouter.getInstance().build("/login/charging/scan").navigation();
   }
@@ -93,26 +93,34 @@ public class ScanActivity extends LvBaseAppCompatActivity implements StationInfo
       if (result.contains(",")) {
         try {
           String[] str = result.split(",");
-          gunId = str[4];
-//          presenter.queryStation(result);
-        } catch (Exception e) {
-          showToast("二维码出错了");
-          scanAgain();
-        }
-      } else {
-        try {
-          String string = result.substring(result.length() - 1);
-          if (string.equals("1")) {
-            gunId = "0";
+          if (str[3].length() != 16) {
+            gunId = str[4];
+            newGunId = Integer.valueOf(gunId) - 1;
+            //删除字符串最后一位
+            result = result.substring(0,result.length() - 1);
+            //新字符串
+            String newResult = result + newGunId;
+            presenter.queryStation(newResult);
           } else {
-            gunId = "1";
+            gunId = String.valueOf(Integer.valueOf(str[4]) + 1);
+            presenter.queryStation(result);
           }
         } catch (Exception e) {
           showToast("二维码出错了");
           scanAgain();
         }
+      } else {
+          String string = result.substring(result.length() - 1);
+          //得到枪号
+          gunId = string;
+          //需要-1
+//          newGunId = Integer.valueOf(gunId)-1;
+//          //删除字符串最后一位
+//          result = result.substring(0,result.length() - 1);
+//          //新字符串
+//          String newResult = result + newGunId;
+          presenter.queryStation(result);
       }
-      presenter.queryStation(result);
     }
 
     /**

@@ -392,7 +392,7 @@ public class PileListActivity extends LvBaseAppCompatActivity implements Station
 			int totalGuns = Integer.parseInt(cpe.cpinterfaceId);
 //			int totalGuns = 6;
 			if (totalGuns < 3 ) {
-				holder.tvGun1.setText(" 枪0 ");
+				holder.tvGun1.setText(" 枪1 ");
 				holder.tvGun1.setCompoundDrawables(getStateDrawable(cpe, 1), null, null, null);
 				holder.llMin.setVisibility(View.VISIBLE);
 				holder.gridLayout.setVisibility(View.GONE);
@@ -407,7 +407,7 @@ public class PileListActivity extends LvBaseAppCompatActivity implements Station
 				});
 				if (totalGuns == 2){
 					holder.tvGun2.setVisibility(View.VISIBLE);
-					holder.tvGun2.setText(" 枪1 ");
+					holder.tvGun2.setText(" 枪2 ");
 					holder.tvGun2.setCompoundDrawables(getStateDrawable(cpe, 2), null, null, null);
 					holder.tvGun2.setOnClickListener(new View.OnClickListener() {
 						@Override

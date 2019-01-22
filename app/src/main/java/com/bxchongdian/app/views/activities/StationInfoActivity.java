@@ -108,7 +108,7 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
     private String               amount;
     private PopupWindow          popWindow;
     private String[]             strMode = {"自动充电", "按金额充电", "按时间充电", "按电量充电"};
-    private String               gunId;
+    private int                  gunId;
     private Dialog               dialog;
     private ChargingDialog       chargingDialog;
 
@@ -145,7 +145,7 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
         initToolbarNav("充电");
         etNum.setFocusable(false);
 
-        gunId = getIntent().getStringExtra("gunId");
+        gunId = Integer.parseInt(getIntent().getStringExtra("gunId"));
         mStationInfoBean = (StationInfoBean) getIntent().getSerializableExtra("stationInfoBean");
         refreshDisplay();
         initPopWindow();
@@ -293,7 +293,7 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
         pileCode.setText(mStationInfoBean.cpId);
         pileType.setText(mStationInfoBean.getCpType());
         tvPower.setText(mStationInfoBean.ratedPower);
-        tvGun.setText("枪" + gunId);
+        tvGun.setText("枪" + String.valueOf(gunId));
     }
 
     /**
@@ -407,7 +407,11 @@ public class StationInfoActivity extends LvBaseAppCompatActivity implements Stat
         request.command = "0";
         request.areaId = this.mStationInfoBean.areaId;
         request.cpId = this.mStationInfoBean.cpId;
-        request.cpinterfaceId = gunId;
+        if (request.cpId.length() != 16) {
+            request.cpinterfaceId = String.valueOf(gunId - 1);
+        } else {
+            request.cpinterfaceId = String.valueOf(gunId - 1);
+        }
         //开始充电
         presenter.startCharging(request);
     }
